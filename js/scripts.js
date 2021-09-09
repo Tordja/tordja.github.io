@@ -184,23 +184,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Tord and Anne-Linns wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('July 16, 2022 10:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('July 17, 2022 12:00'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Thorbjørnrud Hotel, Jevnaker',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "We can't wait to see you on our big day. For any queries or issues, please contact Tord Jacobsen at +47 41001223."
         }
     });
 
@@ -214,10 +214,11 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== '827ccb0eea8a706c4c34a16891f84e7b') {
+        if (MD5($('#invite_code').val()) !== '827ccb0eea8a706c4c34a16891f84e7b'
+            && MD5($('#invite_code').val()) !== '81dc9bdb52d04dc20036dbd8313ed055') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbz5G-1UZ6JqwbfkOIBKmldBlzxviKXjlngVSwMeDA/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbyey00JT3ZSS4crETbfwvyhoE_fnhj-zLIZJrCstxNzB6SmIIPI/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
